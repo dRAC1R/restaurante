@@ -1,0 +1,188 @@
+:root {
+    --color-primario: #003366;
+    --color-secundario: #ff6b6b; /* Color principal de los botones */
+    --color-secundario-hover: #e63946; /* Color de los botones al pasar el ratón */
+    --color-terciario: #1d3557;
+    --color-fondo: #f0f8ff;
+    --color-blanco: #ffffff;
+    --color-exito: #d4edda;
+    --color-exito-texto: #155724;
+    --color-error: #f8d7da;
+    --color-error-texto: #721c24;
+    --color-sombra: rgba(0, 0, 0, 0.15);
+    --fuente-base: 16px;
+    --espaciado: 1rem;
+    --radio-borde: 12px;
+    --sombra-base: 0 6px 25px var(--color-sombra);
+    --sombra-hover: 0 8px 30px rgba(0, 0, 0, 0.2);
+    --duracion-transicion: 0.3s;
+
+    /* Colores específicos para botones */
+    --color-cliente: #3498db; /* Azul */
+    --color-producto: #e74c3c; /* Rojo */
+    --color-agregar: #2ecc71; /* Verde */
+    --color-volver: #f39c12; /* Naranja */
+    --color-editar: #9b59b6; /* Morado */
+    --color-eliminar: #e74c3c; /* Rojo */
+
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--color-fondo);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--color-blanco);
+    padding: 2rem;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-base);
+    transition: box-shadow var(--duracion-transicion);
+}
+
+.container:hover {
+    box-shadow: var(--sombra-hover);
+}
+
+h1, h2 {
+    color: var(--color-primario);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.button {
+    display: inline-block;
+    color: var(--color-blanco);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: var(--radio-borde);
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform var(--duracion-transicion), box-shadow var(--duracion-transicion);
+}
+
+/* Colores específicos para cada tipo de botón */
+.button-cliente {
+    background-color: var(--color-cliente);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+.button-producto {
+    background-color: var(--color-producto);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+.button-agregar {
+    background-color: var(--color-agregar);
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+}
+.button-volver {
+    background-color: var(--color-volver);
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+}
+.button-editar {
+    background-color: var(--color-editar);
+    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
+}
+.button-eliminar {
+    background-color: var(--color-eliminar);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* Efectos hover para cada botón */
+.button:hover {
+    transform: translateY(-2px) scale(1.04);
+}
+.button-cliente:hover { box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6); }
+.button-producto:hover { box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6); }
+.button-agregar:hover { box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6); }
+.button-volver:hover { box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6); }
+.button-editar:hover { box-shadow: 0 6px 20px rgba(155, 89, 182, 0.6); }
+.button-eliminar:hover { box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6); }
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-primario);
+    font-weight: 600;
+}
+
+input[type="text"], input[type="email"], input[type="date"], select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #ced4da;
+    border-radius: var(--radio-borde);
+    background: #fff;
+    color: #495057;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color var(--duracion-transicion), box-shadow var(--duracion-transicion);
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, select:focus, textarea:focus {
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+    outline: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: var(--color-exito);
+}
+
+.success, .error {
+    padding: 1rem;
+    border-radius: var(--radio-borde);
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--sombra-base);
+}
+
+.success {
+    background-color: var(--color-exito);
+    color: var(--color-exito-texto);
+    border-left: 5px solid var(--color-primario);
+}
+
+.error {
+    background-color: var(--color-error);
+    color: var(--color-error-texto);
+    border-left: 5px solid var(--color-error-texto);
+}
